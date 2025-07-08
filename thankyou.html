@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank you | Squishy Skin Website</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Squishy Skin Logo" /></a>
+
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger outside nav -->
+        <div id="mobile" aria-label="Open Menu" role="button" tabindex="0">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+    <!-- Thank you section-->
+    <section class="thankyou-page section-p1">
+        <div class="checkmark">✔</div>
+        <h2>Thank you for your order!</h2>
+        <p>
+            Your order was received and is now being processed.<br />
+            If you completed the payment, you’re all set - we’ll handle the rest!
+
+        </p>
+        <a class="btn" href="index.html">Back to Home</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" alt="Squishy Skin Logo" />
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+            <p><strong>Email:</strong> <a href="mailto:squishyenterprises@gmail.com">squishyenterprises@gmail.com</a>
+            </p>
+            <p><strong>Hours:</strong> Mon-Sat, 9am-6pm</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/squishy.skin/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.svg" alt="Instagram Logo" width="32" height="32" />
+                </a>
+                <a href="https://www.tiktok.com/@squishy.skin" target="_blank" aria-label="TikTok">
+                    <img src="img/tiktok.svg" alt="TikTok Logo" width="32" height="32" />
+                </a>
+                <a href="https://wa.me/255672878720" target="_blank" aria-label="WhatsApp">
+                    <img src="img/whatsapp.svg" alt="WhatsApp Logo" width="32" height="32" />
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="about.html">Return Policy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Orders</h4>
+            <a href="cart.html">View Cart</a>
+        </div>
+
+
+        <!-- Copyright placed outside columns -->
+        <div class="copyright">
+            &copy; <span id="year"></span> Squishy Skin. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- main JS -->
+    <script src="js/script.js"></script>
+
+    <!-- Confetti scripts for thank you page -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 },
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Squishy Skin Website - Product Details</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <!-- Header / Navigation -->
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Squishy Skin Logo" /></a>
+
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" aria-label="View Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" aria-live="polite"
+                            style="position: relative; top: -10px; left: -5px; background: red; color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="mobile" aria-label="Open Menu" role="button" tabindex="0">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+    <!-- Page Header -->
+    <section id="page-header" class="section-p1">
+        <h2>Discover everything about this product</h2>
+    </section>
+
+    <!-- Product Details Container -->
+    <section id="product-detail" class="section-p1">
+        <div class="product-detail-container" id="product-details">
+            <p>Loading product details...</p>
+        </div>
+    </section>
+
+    <!-- Back link -->
+    <section class="section-p1">
+        <a href="products.html" class="back-link">Back to Products</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" alt="Squishy Skin Logo" />
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+            <p><strong>Email:</strong> <a href="mailto:squishyenterprises@gmail.com">squishyenterprises@gmail.com</a>
+            </p>
+            <p><strong>Hours:</strong> Mon-Sat, 9am-6pm</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/squishy.skin/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.svg" alt="Instagram Logo" width="32" height="32" />
+                </a>
+                <a href="https://www.tiktok.com/@squishy.skin" target="_blank" aria-label="TikTok">
+                    <img src="img/tiktok.svg" alt="TikTok Logo" width="32" height="32" />
+                </a>
+                <a href="https://wa.me/255672878720" target="_blank" aria-label="WhatsApp">
+                    <img src="img/whatsapp.svg" alt="WhatsApp Logo" width="32" height="32" />
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="about.html">Return Policy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Orders</h4>
+            <a href="cart.html">View Cart</a>
+        </div>
+
+        <div class="copyright">
+            &copy; <span id="year"></span> Squishy Skin. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile');
+        const navbar = document.getElementById('navbar');
+
+        mobileMenu.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Update copyright year
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Cart logic
+        const cartCountElem = document.getElementById('cart-count');
+
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart')) || [];
+        }
+
+        function saveCart(cart) {
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function updateCartCount() {
+            const cart = getCart();
+            const totalQty = cart.reduce((acc, item) => acc + (item.qty || item.quantity || 1), 0);
+            if (totalQty > 0) {
+                cartCountElem.style.display = 'inline-block';
+                cartCountElem.textContent = totalQty;
+            } else {
+                cartCountElem.style.display = 'none';
+            }
+        }
+
+        function addToCart(product) {
+            let cart = getCart();
+            const existingProductIndex = cart.findIndex(item => item.id === product.id);
+
+            if (existingProductIndex > -1) {
+                cart[existingProductIndex].qty += 1;
+            } else {
+                const newItem = {
+                    id: product.id,
+                    name: product.name,
+                    priceUSD: product.priceUSD || 0,
+                    priceTZSH: product.priceTZSH || 0,
+                    imgSrc: product.imgSrc,
+                    qty: 1
+                };
+                cart.push(newItem);
+            }
+
+            saveCart(cart);
+            updateCartCount();
+
+            // Optional: Replace alert with toast
+            alert(`Added "${product.name}" to cart!`);
+        }
+
+    </script>
+
+    <!-- External JS for product details -->
+    <script src="js/products-data.js"></script>
+    <script src="js/sproduct.js"></script>
+    <script src="js/cart.js"></script>
+
+</body>
+
+</html>

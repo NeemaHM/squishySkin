@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squishy Skin Website</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Squishy Skin Logo" /></a>
+
+        <nav>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" aria-label="View Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" aria-live="polite"
+                            style="position: relative; top: -10px; left: -5px; background: red; color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger outside nav -->
+        <div id="mobile" aria-label="Open Menu" role="button" tabindex="0">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </section>
+
+
+
+    <!-- Hero -->
+    <section id="hero">
+        <h4>Good vibes only</h4>
+        <h2>WE LOVE HELPING</h2>
+        <h1>YOU GLOW</h1>
+        <p>For a glowy & squishy <br> skincare routine!</p>
+        <a href="products.html" class="btn shop-now-btn">SHOP NOW</a>
+
+    </section>
+
+    <!-- How to -->
+
+    <section id="how-to-serum" class="section-p1">
+        <h2>How to Use Our Serums</h2>
+        <div class="how-to-container"
+            style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px; justify-content: center;">
+            <div class="how-to-text" style="max-width: 400px;">
+                <h5>Step 1: Cleanse</h5>
+                <p>Start with a clean face to remove dirt and impurities.</p>
+                <h5>Step 2: Apply Serum</h5>
+                <p>Apply a few drops of serum gently onto your skin, focusing on problem areas.</p>
+                <h5>Step 3: Moisturize & Protect</h5>
+                <p>Seal in the serum with moisturizer and sunscreen during the day.</p>
+            </div>
+            <div class="how-to-image" style="max-width: 400px;">
+                <img src="img/howtoSerum.jpeg" alt="Squishy Skin Serums"
+                    style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Featured Products -->
+    <section id="product1" class="section-p1">
+        <h2>Featured Products</h2>
+        <h3>Our bestsellers</h3>
+        <div class="pro-container">
+
+            <!-- Product 1 -->
+            <div class="pro">
+                <img src="img/bestseller/uv.jpg" alt="" />
+                <div class="des">
+                    <span>Sun screen</span>
+                    <h5>Non-greasy UV sunscreen</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <!--<h4>USD 13.00 / TZSH 35,000/=</h4>-->
+                </div>
+                <a href="sproducts.html?id=1" class="view-details-btn">View Details</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="pro">
+                <img src="img/products/NiaTx10 serum.jpg" alt="" />
+                <div class="des">
+                    <span>Serum</span>
+                    <h5>NiaTX10/4 Serum</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <!--<h4>USD 17.00 / TZSH 45,000/=</h4>-->
+                </div>
+                <a href="sproducts.html?id=2" class="view-details-btn">View Details</a>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="pro">
+                <img src="img/bestseller/barsoap.jpg" alt="" />
+                <div class="des">
+                    <span>Cleanser</span>
+                    <h5>Soothing bar soap</h5>
+                    <div class="star">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <!--<h4>USD 6.00 / TZSH 15,000/=</h4>-->
+                </div>
+                <a href="sproducts.html?id=3" class="view-details-btn">View Details</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+
+    <section id="testimonials" class="section-p1">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-slider">
+            <div class="testimonial-slide active">
+                <p>"This serum changed my skin in just 2 weeks. I’m glowing!"</p>
+                <h4>- Amina N., Dar es Salaam</h4>
+            </div>
+            <div class="testimonial-slide">
+                <p>"I love how lightweight the sunscreen feels. No more greasy face!"</p>
+                <h4>- Jessica R., New York</h4>
+            </div>
+            <div class="testimonial-slide">
+                <p>"The NiaTX10/4 serum helped fade my dark spots. Highly recommend!"</p>
+                <h4>- Faith M., Arusha</h4>
+            </div>
+            <div class="testimonial-slide">
+                <p>"I use the full kit every day and my skin has never looked better."</p>
+                <h4>- Sarah K., Texas</h4>
+            </div>
+            <div class="testimonial-slide">
+                <p>"Great packaging, fast delivery, and amazing products!"</p>
+                <h4>- Jamal T., Dodoma</h4>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" alt="Squishy Skin Logo" />
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+            <p><strong>Email:</strong> <a href="mailto:squishyenterprises@gmail.com">squishyenterprises@gmail.com</a>
+            </p>
+            <p><strong>Hours:</strong> Mon-Sat, 9am-6pm</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/squishy.skin/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.svg" alt="Instagram Logo" width="32" height="32" />
+                </a>
+                <a href="https://www.tiktok.com/@squishy.skin" target="_blank" aria-label="TikTok">
+                    <img src="img/tiktok.svg" alt="TikTok Logo" width="32" height="32" />
+                </a>
+                <a href="https://wa.me/255672878720" target="_blank" aria-label="WhatsApp">
+                    <img src="img/whatsapp.svg" alt="WhatsApp Logo" width="32" height="32" />
+                </a>
+            </div>
+
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="about.html">Return Policy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Orders</h4>
+            <a href="cart.html">View Cart</a>
+        </div>
+
+
+        <!-- Copyright placed outside columns -->
+        <div class="copyright">
+            &copy; <span id="year"></span> Squishy Skin. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="js/script.js"></script>
+    <script src="js/cart-count.js"></script>
+</body>
+
+</html>

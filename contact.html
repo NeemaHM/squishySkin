@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Squishy Skin</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- Header -->
+  <section id="header">
+    <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Squishy Skin Logo" /></a>
+    <nav>
+      <ul id="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a class="active" href="contact.html">Contact</a></li>
+        <li>
+          <a href="cart.html" aria-label="View Cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span id="cart-count" aria-live="polite"
+              style="position: relative; top: -10px; left: -5px; background: red; color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mobile" aria-label="Open Menu" role="button" tabindex="0">
+      <i id="bar" class="fa-solid fa-bars"></i>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact-container section-p1">
+    <h1>Contact Us</h1>
+    <p>Have questions or feedbacks? Need help choosing the right product? We’re just a message away.</p>
+
+    <div class="contact-wrapper">
+      <form class="contact-form" action="https://formspree.io/f/mzzglbkz" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+        <!-- Optional: Redirect after submission -->
+        <input type="hidden" name="_redirect" value="thankyou.html" />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+
+  <div class="contact-info">
+    <h3>Reach Us Directly</h3>
+    <p><strong>Email:</strong> squishyenterprises@gmail.com</p>
+    <p><strong>Phone:</strong> +255 672 878 720</p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/255672878720" target="_blank">+255 672 878 720</a></p>
+    <p><strong>Instagram:</strong> <a href="https://www.instagram.com/squishy.skin/" target="_blank">@squishy.skin</a>
+    </p>
+    <p><strong>Location:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+    <p><strong>Hours:</strong> Mon – Sat | 9:00AM – 6:00PM</p>
+  </div>
+  </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="section-p1">
+    <div class="col">
+      <img class="logo" src="img/logo.jpg" alt="Squishy Skin Logo" />
+      <h4>Contact</h4>
+      <p><strong>Address:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+      <p><strong>Email:</strong> <a href="mailto:squishyenterprises@gmail.com">squishyenterprises@gmail.com</a></p>
+      <p><strong>Hours:</strong> Mon-Sat, 9am-6pm</p>
+      <div class="follow">
+        <h4>Follow Us</h4>
+        <a href="https://www.instagram.com/squishy.skin/" target="_blank" aria-label="Instagram">
+          <img src="img/ig.svg" alt="Instagram Logo" width="32" height="32" />
+        </a>
+        <a href="https://www.tiktok.com/@squishy.skin" target="_blank" aria-label="TikTok">
+          <img src="img/tiktok.svg" alt="TikTok Logo" width="32" height="32" />
+        </a>
+        <a href="https://wa.me/255672878720" target="_blank" aria-label="WhatsApp">
+          <img src="img/whatsapp.svg" alt="WhatsApp Logo" width="32" height="32" />
+        </a>
+      </div>
+
+    </div>
+
+    <div class="col">
+      <h4>About</h4>
+      <a href="about.html">About us</a>
+      <a href="about.html">Return Policy</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+
+    <div class="col">
+      <h4>Orders</h4>
+      <a href="cart.html">View Cart</a>
+    </div>
+
+    <!-- Copyright placed outside columns -->
+    <div class="copyright">
+      &copy; <span id="year"></span> Squishy Skin. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- main JS -->
+  <script src="js/script.js"></script>
+  <script src="js/cart-count.js"></script>
+
+
+
+</body>
+
+</html>

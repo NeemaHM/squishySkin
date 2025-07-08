@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Squishy Skin - Checkout</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section id="header">
+        <a href="index.html"><img src="img/logo.jpg" class="logo" alt="Squishy Skin Logo" /></a>
+        <nav>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="cart.html" aria-label="View Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count" aria-live="polite"
+                            style="position: relative; top: -10px; left: -5px; background: red; color: white; font-size: 0.8rem; border-radius: 50%; padding: 2px 6px; display: none;">0</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div id="mobile"><i id="bar" class="fa-solid fa-bars"></i></div>
+    </section>
+
+    <!-- Checkout Form -->
+    <section class="checkout-wrapper">
+        <h2>Finalize your purchase!</h2>
+        <h3 id="total-display" style="color: #2e7d5e; margin-bottom: 15px;">Total: $0.00</h3>
+        </div>
+
+
+        <!-- Tanzania payment -->
+
+        <!-- Instructions area that will toggle -->
+        <p id="payment-instruction" style="font-weight: bold; color: #2e7d5e;">Please select your country first.</p>
+
+        <div id="payment-instructions-tz" class="payment-box-tz" style="display: none;">
+            <div class="lipa-number">573717</div>
+            <p style="margin-top: 10px;">After payment, please check the box below to confirm.</p>
+        </div>
+
+
+        <!-- US Payment Links -->
+        <div id="payment-links-us" style="display:none; margin-bottom: 20px;">
+            <a href="https://cash.app/$Squishyskin" target="_blank" class="btn-primary" style="margin-right:10px;">
+                Pay with Cash App
+            </a>
+            <a href="https://www.paypal.com/paypalme/SQUISHYSKIN?locale.x=en_US" target="_blank" class="btn-primary">
+                Pay with PayPal
+            </a>
+        </div>
+
+        <form id="checkout-form" novalidate>
+            <label for="name">Your First and last Name</label>
+            <input type="text" id="name" name="name" placeholder="First and last name" required />
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" />
+
+            <!-- Tanzania specific fields -->
+            <div id="tz-fields">
+                <label for="tz-phone">Phone Number</label>
+                <input type="tel" id="tz-phone" name="tz-phone" required />
+
+                <label for="tz-region">Region</label>
+                <input type="text" id="tz-region" name="tz-region" placeholder="Region" required />
+            </div>
+
+            <!-- US specific fields -->
+            <div id="us-fields">
+                <label for="us-street1">Street Address</label>
+                <input type="text" id="us-street1" name="us-street1" placeholder="Street address" required />
+
+                <label for="us-street2">Apartment, suite, etc. (optional)</label>
+                <input type="text" id="us-street2" name="us-street2" placeholder="Apartment, suite, etc." />
+
+                <label for="us-city">City</label>
+                <input type="text" id="us-city" name="us-city" placeholder="City" required />
+
+                <label for="us-state">State</label>
+                <input type="text" id="us-state" name="us-state" placeholder="State (e.g., NY)" required />
+
+                <label for="us-zip">ZIP Code</label>
+                <input type="text" id="us-zip" name="us-zip" placeholder="ZIP Code" required />
+            </div>
+
+
+            <!-- Order summary -->
+            <label for="product">Your Order Summary</label>
+            <textarea id="product" name="product" placeholder="Your order summary will appear here..."
+                readonly></textarea>
+
+            <!-- Payment confirmation checkboxes -->
+            <div id="payment-options-tz" style="display: none;">
+                <label><input type="checkbox" id="confirm-payment-tz" /> I have sent the payment via Lipa Namba</label>
+            </div>
+
+            <div id="payment-options-us">
+                <label><input type="checkbox" id="confirm-payment-us" /> I have sent the payment via Cash App or
+                    PayPal</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Complete Order</button>
+            <div id="checkout-message" class="auth-message hidden"></div>
+        </form>
+    </section>
+
+    <!-- Modal -->
+    <div id="confirmation-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Order Confirmation</h3>
+            <p id="instruction-text"></p>
+            <button id="submit-payment-btn" class="btn-primary">Confirm & Place Order</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="img/logo.jpg" alt="Squishy Skin Logo" />
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> Dar es Salaam, Tanzania | Mbezi Beach kwa Zena</p>
+            <p><strong>Email:</strong> <a href="mailto:squishyenterprises@gmail.com">squishyenterprises@gmail.com</a>
+            </p>
+            <p><strong>Hours:</strong> Mon-Sat, 9am-6pm</p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <a href="https://www.instagram.com/squishy.skin/" target="_blank" aria-label="Instagram">
+                    <img src="img/ig.svg" alt="Instagram Logo" width="32" height="32" />
+                </a>
+                <a href="https://www.tiktok.com/@squishy.skin" target="_blank" aria-label="TikTok">
+                    <img src="img/tiktok.svg" alt="TikTok Logo" width="32" height="32" />
+                </a>
+                <a href="https://wa.me/255672878720" target="_blank" aria-label="WhatsApp">
+                    <img src="img/whatsapp.svg" alt="WhatsApp Logo" width="32" height="32" />
+                </a>
+            </div>
+        </div>
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About us</a>
+            <a href="about.html">Return Policy</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+
+        <div class="col">
+            <h4>Orders</h4>
+            <a href="cart.html">View Cart</a>
+        </div>
+
+        <div class="copyright">
+            &copy; <span id="year"></span> Squishy Skin. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="/js/script.js"></script>
+    <script src="/js/checkout.js"></script>
+    <script src="js/cart-count.js"></script>
+
+</body>
+
+</html>
