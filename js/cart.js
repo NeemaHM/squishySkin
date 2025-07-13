@@ -2,11 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.getElementById("cart-items");
   const emptyMsg = document.getElementById("empty-cart-msg");
   const subtotalElem = document.getElementById("subtotal");
+  const cartSummary = document.getElementById("cart-summary");
 
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   const country = localStorage.getItem("selectedCountry") || "US";
   const isTZ = country === "TZ";
-  const currency = isTZ ? "TZS" : "USD";
+  const currency = isTZ ? "TZSH" : "USD";
 
   function renderCart() {
     if (cart.length === 0) {
@@ -14,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       emptyMsg.style.display = "block";
       subtotalElem.textContent = `${currency} 0`;
       updateCartCount();
+      document.getElementById("shipping-note").style.display = "none";
       return;
     }
 
@@ -21,17 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
     cartItemsContainer.innerHTML = "";
 
     let subtotal = 0;
+    let itemCount = 0;
 
     cart.forEach((item, index) => {
       const price = isTZ ? item.priceTZSH : item.priceUSD;
-      const total = price * item.qty;
+      const qty = item.qty;
+      const total = price * qty;
       subtotal += total;
+      itemCount += qty;
 
       const row = document.createElement("tr");
       row.innerHTML = `
         <td><img src="${item.imgSrc}" alt="${item.name}" width="50" /> ${item.name}</td>
         <td>${currency} ${isTZ ? price.toLocaleString() : price.toFixed(2)}</td>
-        <td><input type="number" min="1" value="${item.qty}" data-index="${index}" class="quantity-input" /></td>
+        <td><input type="number" min="1" value="${qty}" data-index="${index}" class="quantity-input" /></td>
         <td>${currency} ${isTZ ? total.toLocaleString() : total.toFixed(2)}</td>
         <td><button class="remove-btn" data-index="${index}">&times;</button></td>
       `;
@@ -40,21 +45,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     subtotalElem.textContent = `${currency} ${isTZ ? subtotal.toLocaleString() : subtotal.toFixed(2)}`;
 
-    // Show shipping note only for US users
+    // Show estimated shipping fee for US only
     const shippingNote = document.getElementById("shipping-note");
     if (!isTZ && shippingNote) {
       shippingNote.style.display = "block";
-    } else if (shippingNote) {
-      shippingNote.style.display = "none";
+      const shippingEstimate = itemCount <= 4 ? 8 : 12;
+      shippingNote.innerHTML = `
+        <em>Note: Estimated U.S. shipping is <strong>$${shippingEstimate.toFixed(2)}</strong> for ${itemCount} item${itemCount === 1 ? '' : 's'}. Final total shown at checkout.</em>
+      `;
     }
 
-
-    // Attach event listeners AFTER rendering
     attachEventListeners();
+    updateCartCount();
   }
 
   function attachEventListeners() {
-    // Update quantity
     document.querySelectorAll(".quantity-input").forEach((input) => {
       input.addEventListener("change", (e) => {
         const index = e.target.getAttribute("data-index");
@@ -62,21 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
         if (newQty > 0) {
           cart[index].qty = newQty;
           localStorage.setItem("cart", JSON.stringify(cart));
-          renderCart(); // Re-render cart after quantity change
+          renderCart();
         } else {
-          // Reset to previous value if invalid
           e.target.value = cart[index].qty;
         }
       });
     });
 
-    // Remove item
     document.querySelectorAll(".remove-btn").forEach((btn) => {
       btn.addEventListener("click", (e) => {
         const index = e.target.getAttribute("data-index");
         cart.splice(index, 1);
         localStorage.setItem("cart", JSON.stringify(cart));
-        renderCart(); // Re-render cart after removal
+        renderCart();
       });
     });
   }
@@ -90,7 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Initial render
   renderCart();
-  updateCartCount();
 });

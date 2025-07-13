@@ -36,12 +36,19 @@
             </ul>
         </nav>
 
+        <!-- Change Country Info -->
+        <div id="country-toggle">
+            Shopping from <strong id="current-country"></strong>?
+            <button id="change-country">
+                Change Country
+            </button>
+        </div>
+
         <!-- Hamburger outside nav -->
         <div id="mobile" aria-label="Open Menu" role="button" tabindex="0">
             <i id="bar" class="fa-solid fa-bars"></i>
         </div>
     </section>
-
 
 
     <!-- Hero -->
@@ -54,39 +61,56 @@
 
     </section>
 
-    <!-- How to -->
+    <!-- How to Use Serums & Super Combo -->
+    <section id="slideshow" class="section-p1">
+        <div class="slides-wrapper">
+            <!-- Slide 1 (Visible by default) -->
+            <div class="slide active">
+                <h3>How to Use Our Serums</h3>
+                <img src="img/howtoSerum.jpeg" alt="Squishy Skin Serums" />
+                <div class="slide-text">
+                    <h5>Step 1: Cleanse</h5>
+                    <p>Start with a clean face to remove dirt and impurities.</p>
+                    <h5>Step 2: Apply Serum</h5>
+                    <p>Apply a few drops of serum gently onto your skin, focusing on problem areas.</p>
+                    <h5>Step 3: Moisturize & Protect</h5>
+                    <p>Seal in the serum with moisturizer and sunscreen during the day.</p>
+                </div>
+            </div>
 
-    <section id="how-to-serum" class="section-p1">
-        <h2>How to Use Our Serums</h2>
-        <div class="how-to-container"
-            style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px; justify-content: center;">
-            <div class="how-to-text" style="max-width: 400px;">
-                <h5>Step 1: Cleanse</h5>
-                <p>Start with a clean face to remove dirt and impurities.</p>
-                <h5>Step 2: Apply Serum</h5>
-                <p>Apply a few drops of serum gently onto your skin, focusing on problem areas.</p>
-                <h5>Step 3: Moisturize & Protect</h5>
-                <p>Seal in the serum with moisturizer and sunscreen during the day.</p>
+            <!-- Slide 2 -->
+            <div class="slide">
+                <h3>Super Combo Set</h3>
+                <img src="img/superCombo.jpg" alt="Super Combo Set of Soap, Serums and Sunscreen" />
+                <p>
+                    Say hello to your glow combo! Start fresh with our soothing cleanser bar, layer on the NiaTX10/4
+                    serum, L Ascorbic Plus serum, and Hyaluronic serum, then seal the deal with our SPF 50+ sunscreen.
+                    Enjoy Good Vibes Only with our Super Combo Set!
+                </p>
             </div>
-            <div class="how-to-image" style="max-width: 400px;">
-                <img src="img/howtoSerum.jpeg" alt="Squishy Skin Serums"
-                    style="width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);" />
-            </div>
+        </div>
+
+        <!-- Dots Navigation -->
+        <div class="pagination-dots" aria-label="Slideshow Pagination">
+            <span class="dot active" tabindex="0" role="button" aria-label="Slide 1"></span>
+            <span class="dot" tabindex="0" role="button" aria-label="Slide 2"></span>
         </div>
     </section>
 
 
+
     <!-- Featured Products -->
     <section id="product1" class="section-p1">
-        <h2>Featured Products</h2>
-        <h3>Our bestsellers</h3>
+        <div class="headings-wrapper">
+            <h2>Featured Products</h2>
+            <h3>Our bestsellers</h3>
+        </div>
         <div class="pro-container">
-
             <!-- Product 1 -->
             <div class="pro">
-                <img src="img/bestseller/uv.jpg" alt="" />
+                <img src="img/bestseller/uv.jpg" alt="Sunscreen" />
                 <div class="des">
-                    <span>Sun screen</span>
+                    <span>Sunscreen</span>
                     <h5>Non-greasy UV sunscreen</h5>
                     <div class="star">
                         <i class="fa-solid fa-star"></i>
@@ -95,14 +119,13 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <!--<h4>USD 13.00 / TZSH 35,000/=</h4>-->
                 </div>
                 <a href="sproducts.html?id=1" class="view-details-btn">View Details</a>
             </div>
 
             <!-- Product 2 -->
             <div class="pro">
-                <img src="img/products/NiaTx10 serum.jpg" alt="" />
+                <img src="img/products/NiaTx10 serum.jpg" alt="NiaTX10/4 Serum" />
                 <div class="des">
                     <span>Serum</span>
                     <h5>NiaTX10/4 Serum</h5>
@@ -113,14 +136,13 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <!--<h4>USD 17.00 / TZSH 45,000/=</h4>-->
                 </div>
                 <a href="sproducts.html?id=2" class="view-details-btn">View Details</a>
             </div>
 
             <!-- Product 3 -->
             <div class="pro">
-                <img src="img/bestseller/barsoap.jpg" alt="" />
+                <img src="img/bestseller/barsoap.jpg" alt="Soothing Bar Soap" />
                 <div class="des">
                     <span>Cleanser</span>
                     <h5>Soothing bar soap</h5>
@@ -131,11 +153,9 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-regular fa-star"></i>
                     </div>
-                    <!--<h4>USD 6.00 / TZSH 15,000/=</h4>-->
                 </div>
                 <a href="sproducts.html?id=3" class="view-details-btn">View Details</a>
             </div>
-
         </div>
     </section>
 

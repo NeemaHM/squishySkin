@@ -68,7 +68,67 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(showSlides, 4000);
   }
   if (slides.length > 0) showSlides();
+
+  // Country toggle in header
+  const currentCountryEl = document.getElementById("current-country");
+  const changeCountryBtn = document.getElementById("change-country");
+  // selectedCountry is already defined earlier, going to reuse it
+
+  if (currentCountryEl) {
+    currentCountryEl.textContent = selectedCountry === "TZ" ? "Tanzania" : "United States";
+  }
+
+  if (changeCountryBtn) {
+    changeCountryBtn.addEventListener("click", () => {
+      const newCountry = selectedCountry === "TZ" ? "US" : "TZ";
+      localStorage.setItem("selectedCountry", newCountry);
+      location.reload();
+    });
+  }
+
+  
+
+// ========== Slideshow for Combo & Serums ========== //
+let comboSlides = document.querySelectorAll(".slide");
+let dots = document.querySelectorAll(".dot");
+let comboSlideIndex = 0;
+let comboTimer;
+
+function showComboSlide(index) {
+  comboSlides.forEach((slide) => slide.classList.remove("active"));
+  dots.forEach((dot) => dot.classList.remove("active"));
+
+  comboSlideIndex = index;
+  comboSlides[comboSlideIndex].classList.add("active");
+  dots[comboSlideIndex].classList.add("active");
+}
+
+function nextComboSlide() {
+  comboSlideIndex = (comboSlideIndex + 1) % comboSlides.length;
+  showComboSlide(comboSlideIndex);
+}
+
+function startComboAutoSlide() {
+  comboTimer = setInterval(nextComboSlide, 5000); // Change every 5 sec
+}
+
+function resetComboAutoSlide(index) {
+  clearInterval(comboTimer);
+  showComboSlide(index);
+  startComboAutoSlide();
+}
+
+dots.forEach((dot, i) => {
+  dot.addEventListener("click", () => {
+    resetComboAutoSlide(i);
+  });
 });
+
+showComboSlide(comboSlideIndex);
+startComboAutoSlide();
+
+
+}); // end DOMContentLoaded
 
 // Toast message system
 function showToast(message, type = "info") {

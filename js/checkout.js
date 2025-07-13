@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let orderSummaryLines = [];
   let total = 0;
-  const shippingFee = userCountry === "US" ? 15 : 0;
+  let itemCount = 0;
 
   cart.forEach(item => {
     let price = userCountry === "TZ" ? item.priceTZSH : item.priceUSD;
@@ -67,24 +67,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const qty = item.qty || 1;
     const lineTotal = price * qty;
     total += lineTotal;
+    itemCount += qty;
 
     orderSummaryLines.push(`• ${item.name} x ${qty} = ${priceFormatted}`);
   });
 
-  // Add shipping line if US
-  if (shippingFee > 0) {
-    orderSummaryLines.push(`+ Flat Rate Shipping = $${shippingFee.toFixed(2)}`);
+  // Tiered shipping logic
+  let shippingFee = 0;
+  if (userCountry === "US") {
+    shippingFee = itemCount <= 4 ? 8 : 12;
+    orderSummaryLines.push(`+ Shipping (${itemCount} items) = $${shippingFee.toFixed(2)}`);
   }
 
   const totalWithShipping = total + shippingFee;
-
   const totalFormatted = userCountry === "TZ"
     ? `TZSH ${totalWithShipping.toLocaleString()} /=`
     : `$${totalWithShipping.toFixed(2)}`;
 
   productField.value = orderSummaryLines.join("\n") + `\n\nTotal: ${totalFormatted}`;
 
-  // Update total display heading
   if (totalDisplay) {
     totalDisplay.textContent = `Total: ${totalFormatted}`;
   }
@@ -103,7 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
 
-    // Validate US address fields if US customer
     if (userCountry === "US") {
       const street1 = document.getElementById("us-street1").value.trim();
       const city = document.getElementById("us-city").value.trim();
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Show modal confirmation
+    // Show confirmation modal
     modalText.innerHTML = `
       <strong>Payment Confirmed!</strong><br><br>
       <strong>Total Paid:</strong> ${totalFormatted}<br>
