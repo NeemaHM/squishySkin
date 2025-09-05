@@ -11,16 +11,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function renderCart() {
     if (cart.length === 0) {
-      cartItemsContainer.innerHTML = "";
-      emptyMsg.style.display = "block";
-      subtotalElem.textContent = `${currency} 0`;
+      if (cartItemsContainer) cartItemsContainer.innerHTML = "";
+      if (emptyMsg) emptyMsg.style.display = "block";
+      if (subtotalElem) subtotalElem.textContent = `${currency} 0`;
       updateCartCount();
-      document.getElementById("shipping-note").style.display = "none";
+      const shippingNote = document.getElementById("shipping-note");
+      if (shippingNote) shippingNote.style.display = "none";
       return;
     }
 
-    emptyMsg.style.display = "none";
-    cartItemsContainer.innerHTML = "";
+    if (emptyMsg) emptyMsg.style.display = "none";
+    if (cartItemsContainer) cartItemsContainer.innerHTML = "";
 
     let subtotal = 0;
     let itemCount = 0;
@@ -32,18 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
       subtotal += total;
       itemCount += qty;
 
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td><img src="${item.imgSrc}" alt="${item.name}" width="50" /> ${item.name}</td>
-        <td>${currency} ${isTZ ? price.toLocaleString() : price.toFixed(2)}</td>
-        <td><input type="number" min="1" value="${qty}" data-index="${index}" class="quantity-input" /></td>
-        <td>${currency} ${isTZ ? total.toLocaleString() : total.toFixed(2)}</td>
-        <td><button class="remove-btn" data-index="${index}">&times;</button></td>
-      `;
-      cartItemsContainer.appendChild(row);
+      if (cartItemsContainer) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td><img src="${item.imgSrc}" alt="${item.name}" width="50" /> ${item.name}</td>
+          <td>${currency} ${isTZ ? price.toLocaleString() : price.toFixed(2)}</td>
+          <td><input type="number" min="1" value="${qty}" data-index="${index}" class="quantity-input" /></td>
+          <td>${currency} ${isTZ ? total.toLocaleString() : total.toFixed(2)}</td>
+          <td><button class="remove-btn" data-index="${index}">&times;</button></td>
+        `;
+        cartItemsContainer.appendChild(row);
+      }
     });
 
-    subtotalElem.textContent = `${currency} ${isTZ ? subtotal.toLocaleString() : subtotal.toFixed(2)}`;
+    if (subtotalElem) subtotalElem.textContent = `${currency} ${isTZ ? subtotal.toLocaleString() : subtotal.toFixed(2)}`;
 
     // Show estimated shipping fee for US only
     const shippingNote = document.getElementById("shipping-note");

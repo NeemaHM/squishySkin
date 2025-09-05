@@ -60,6 +60,19 @@
       ingredients: "Stabilized L-Ascorbic Acid, PDRN",
       purpose: "Brightens, fades dark spots, and provides antioxidant protection.",
       forWho: "All skin types - especially dull, uneven, or aging skin."
+    },
+    {
+      id: "6",
+      name: "Blue Copper Peptide Serum GHK-Cu",
+      priceUSD: 9,
+      priceTZSH: 22000,
+      image: "img/products/bluePeptide2.jpg",
+      category: "Serum",
+      description: "Infused with advanced peptides, hydrating agents, and skin-repairing actives, this lightweight serum stimulates collagen, repairs skin damage, and restores elasticity, leaving your skin smoother, plumper, and glowing.",
+      ingredients: "GHK-Cu (Blue Copper Peptide / 블루 구리 펩타이드) ",
+      purpose: "Boosts collagen production, improves skin firmness, reduces fine lines and wrinkles, and enhances overall skin texture.",
+      forWho: "Targets fine lines, sagging skin, dullness, and post-treatment damage (e.g.: microneedling, peels) while boosting collagen for a firmer, healthier-looking complexion."
     }
+
   ];
 

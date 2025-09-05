@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Soothing bar soap",
       priceUSD: 6,
       priceTZSH: 15000,
-      image: "img/bestseller/barsoap.jpg",
+      image: "img/products/barsoap.jpg",
       category: "Cleanser",
       description: "A detoxifying sea salt and goat milk soap that exfoliates gently.",
       ingredients: "Sea Salt, Goat Milk",
@@ -63,6 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
       ingredients: "Stabilized L-Ascorbic Acid, PDRN",
       purpose: "Brightens, fades dark spots, and provides antioxidant protection.",
       forWho: "All skin types — especially dull, uneven, or aging skin."
+    },
+    // Add more products as needed
+    {
+      id: "6",
+      name: "Blue Copper Peptide Serum GHK-Cu",
+      priceUSD: 9,
+      priceTZSH: 22000,
+      image: "img/products/bluePeptide2.jpg",
+      category: "Serum",
+      description: "Infused with advanced peptides, hydrating agents, and skin-repairing actives, this lightweight serum stimulates collagen, repairs skin damage, and restores elasticity, leaving your skin smoother, plumper, and glowing.",
+      ingredients: "GHK-Cu (Blue Copper Peptide / 블루 구리 펩타이드) ",
+      purpose: "Boosts collagen and elastin to smooth wrinkles, accelerates skin healing and strengthens the barrier, and restores firmness for a youthful look.",
+      forWho: "Targets fine lines, sagging skin, dullness, and post-treatment damage (e.g.: microneedling, peels) while boosting collagen for a firmer, healthier-looking complexion."
     }
   ];
 
@@ -119,9 +132,11 @@ function addToCartFromDetails(productId) {
   const products = [
     { id: "1", name: "Non-greasy UV sunscreen", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/bestseller/uv.jpg" },
     { id: "2", name: "NiaTX10/4 Serum", priceUSD: 17, priceTZSH: 45000, imgSrc: "img/products/niatx10 2 serum.jpg" },
-    { id: "3", name: "Soothing bar soap", priceUSD: 6, priceTZSH: 15000, imgSrc: "img/bestseller/barsoap.jpg" },
+    { id: "3", name: "Soothing bar soap", priceUSD: 6, priceTZSH: 15000, imgSrc: "img/products/barsoap.jpg" },
     { id: "4", name: "Hyaluronic plus", priceUSD: 17, priceTZSH: 45000, imgSrc: "img/products/hyluronic plus+ serum.jpg" },
-    { id: "5", name: "L-Ascorbic plus serum", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/products/lacorbic serum.jpg" }
+    { id: "5", name: "L-Ascorbic plus serum", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/products/lacorbic serum.jpg" },
+    { id: "6", name: "Blue Copper Peptide Serum GHK-Cu", priceUSD: 9, priceTZSH: 22000, imgSrc: "img/products/bluePeptide2.jpg" }
+    // Add more products as needed
   ];
 
   const product = products.find(p => p.id === String(productId));

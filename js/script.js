@@ -95,13 +95,25 @@ let comboSlideIndex = 0;
 let comboTimer;
 
 function showComboSlide(index) {
+  // Stop if no slides or dots exist
+  if (!comboSlides.length || !dots.length) return;
+
+  // Remove existing active classes
   comboSlides.forEach((slide) => slide.classList.remove("active"));
   dots.forEach((dot) => dot.classList.remove("active"));
 
-  comboSlideIndex = index;
-  comboSlides[comboSlideIndex].classList.add("active");
-  dots[comboSlideIndex].classList.add("active");
+  // Make sure index is in range
+  comboSlideIndex = index % comboSlides.length;
+
+  // Safely add active classes
+  if (comboSlides[comboSlideIndex]) {
+      comboSlides[comboSlideIndex].classList.add("active");
+  }
+  if (dots[comboSlideIndex]) {
+      dots[comboSlideIndex].classList.add("active");
+  }
 }
+
 
 function nextComboSlide() {
   comboSlideIndex = (comboSlideIndex + 1) % comboSlides.length;
