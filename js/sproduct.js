@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "3",
       name: "Soothing bar soap",
-      priceUSD: 6,
+      priceUSD: 9.99,
       priceTZSH: 15000,
       image: "img/products/barsoap.jpg",
       category: "Cleanser",
@@ -76,6 +76,18 @@ document.addEventListener("DOMContentLoaded", () => {
       ingredients: "GHK-Cu (Blue Copper Peptide / 블루 구리 펩타이드) ",
       purpose: "Boosts collagen and elastin to smooth wrinkles, accelerates skin healing and strengthens the barrier, and restores firmness for a youthful look.",
       forWho: "Targets fine lines, sagging skin, dullness, and post-treatment damage (e.g.: microneedling, peels) while boosting collagen for a firmer, healthier-looking complexion."
+    },
+    {
+      id: "7",
+      name: "ANTI ACNE Moisturizer",
+      priceUSD: 25,
+      priceTZSH: 62000, // conversion rate USD to TSH
+      image: "img/products/antiacne.jpg",
+      category: "Moisturizer",
+      description: "Lightweight, fast-absorbing formula powered by Salicylic Acid, Azelaic Acid & Niacinamide to target breakouts, refine pores, and fade dark spots.",
+      ingredients: "Salicylic Acid, Azelaic Acid, Niacinamide, Centella Asiatica, Aloe Vera, Hyaluronic Acid",
+      purpose: "Hydrates, soothes, clears breakouts, minimizes pores, and brightens dark spots for balanced, smooth, and clear skin.",
+      forWho: "Best for acne-prone, oily, or combination skin. Gentle enough for sensitive types seeking hydration and clarity."
     }
   ];
 
@@ -132,10 +144,11 @@ function addToCartFromDetails(productId) {
   const products = [
     { id: "1", name: "Non-greasy UV sunscreen", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/bestseller/uv.jpg" },
     { id: "2", name: "NiaTX10/4 Serum", priceUSD: 17, priceTZSH: 45000, imgSrc: "img/products/niatx10 2 serum.jpg" },
-    { id: "3", name: "Soothing bar soap", priceUSD: 6, priceTZSH: 15000, imgSrc: "img/products/barsoap.jpg" },
+    { id: "3", name: "Soothing bar soap", priceUSD: 9.99, priceTZSH: 15000, imgSrc: "img/products/barsoap.jpg" },
     { id: "4", name: "Hyaluronic plus", priceUSD: 17, priceTZSH: 45000, imgSrc: "img/products/hyluronic plus+ serum.jpg" },
     { id: "5", name: "L-Ascorbic plus serum", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/products/lacorbic serum.jpg" },
-    { id: "6", name: "Blue Copper Peptide Serum GHK-Cu", priceUSD: 15.99, priceTZSH: 28000, imgSrc: "img/products/bluePeptide2.jpg" }
+    { id: "6", name: "Blue Copper Peptide Serum GHK-Cu", priceUSD: 15.99, priceTZSH: 28000, imgSrc: "img/products/bluePeptide2.jpg" },
+    { id: "7", name: "ANTI ACNE Moisturizer", priceUSD: 25, priceTZSH: 62000, imgSrc: "img/products/antiacne.jpg" }
     // Add more products as needed
   ];
 

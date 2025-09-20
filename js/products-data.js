@@ -28,7 +28,7 @@
     {
       id: "3",
       name: "Soothing bar soap",
-      priceUSD: 6,
+      priceUSD: 9.99,
       priceTZSH: 15000,
       image: "img/bestseller/barsoap.jpg",
       category: "Cleanser",
@@ -72,6 +72,18 @@
       ingredients: "GHK-Cu (Blue Copper Peptide / 블루 구리 펩타이드) ",
       purpose: "Boosts collagen production, improves skin firmness, reduces fine lines and wrinkles, and enhances overall skin texture.",
       forWho: "Targets fine lines, sagging skin, dullness, and post-treatment damage (e.g.: microneedling, peels) while boosting collagen for a firmer, healthier-looking complexion."
+    },
+    {
+      id: "7",
+      name: "ANTI ACNE Moisturizer",
+      priceUSD: 25,
+      priceTZSH: 62000,
+      image: "img/products/antiacne.jpg",
+      category: "Moisturizer",
+      description: "A lightweight, non-comedogenic moisturizer formulated to combat acne while keeping skin hydrated and balanced.",
+      ingredients: "Salicylic Acid, Niacinamide, Hyaluronic Acid, Aloe Vera Extract",
+      purpose: "Reduces acne breakouts, unclogs pores, soothes inflammation, and provides long-lasting hydration without clogging pores.",
+      forWho: "Ideal for oily and acne-prone skin types, but suitable for all skin types looking to prevent breakouts while maintaining moisture."
     }
 
   ];
