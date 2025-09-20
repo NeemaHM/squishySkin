@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       id: "6",
       name: "Blue Copper Peptide Serum GHK-Cu",
-      priceUSD: 9,
+      priceUSD: 15.99,
       priceTZSH: 22000,
       image: "img/products/bluePeptide2.jpg",
       category: "Serum",
@@ -135,7 +135,7 @@ function addToCartFromDetails(productId) {
     { id: "3", name: "Soothing bar soap", priceUSD: 6, priceTZSH: 15000, imgSrc: "img/products/barsoap.jpg" },
     { id: "4", name: "Hyaluronic plus", priceUSD: 17, priceTZSH: 45000, imgSrc: "img/products/hyluronic plus+ serum.jpg" },
     { id: "5", name: "L-Ascorbic plus serum", priceUSD: 13, priceTZSH: 35000, imgSrc: "img/products/lacorbic serum.jpg" },
-    { id: "6", name: "Blue Copper Peptide Serum GHK-Cu", priceUSD: 9, priceTZSH: 22000, imgSrc: "img/products/bluePeptide2.jpg" }
+    { id: "6", name: "Blue Copper Peptide Serum GHK-Cu", priceUSD: 15.99, priceTZSH: 28000, imgSrc: "img/products/bluePeptide2.jpg" }
     // Add more products as needed
   ];
 

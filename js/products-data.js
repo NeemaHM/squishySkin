@@ -64,7 +64,7 @@
     {
       id: "6",
       name: "Blue Copper Peptide Serum GHK-Cu",
-      priceUSD: 9,
+      priceUSD: 15.99,
       priceTZSH: 22000,
       image: "img/products/bluePeptide2.jpg",
       category: "Serum",
